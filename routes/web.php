@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\Jenis_bukuController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\Rak_bukuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('buku', BukuController::class);
+Route::resource('jenis_buku', Jenis_bukuController::class);
+Route::resource('buku/export/', BukuController::class);
+Route::resource('rak_buku', Rak_bukuController::class);
